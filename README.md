@@ -21,7 +21,7 @@ Just go [here](https://top.gg/bot/788673199956688906) or [here](https://discord.
 
 ## Credits
 Developer: [1rens1](https://github.com/1rens1/)<br>
-Bot hosting:  [my phone]() :|
+Bot hosting:  <span style="color:#0366d6;cursor:pointer;">my phone</span> :|
 
 ## License
 [MIT License](https://github.com/1rens1/RensBot-JS/blob/main/LICENSE/)
