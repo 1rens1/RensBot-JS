@@ -24,4 +24,4 @@ Developer: [1rens1](https://github.com/1rens1/)<br>
 Bot hosting:  [my phone]() :|
 
 ## License
-[MIT License](https://github.com/1rens1/RensBot/blob/main/LICENSE/)
+[MIT License](https://github.com/1rens1/RensBot-JS/blob/main/LICENSE/)
