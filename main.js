@@ -1,8 +1,8 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const prefix = 'r!';
+const defprefix = 'r!';
 const fs = require('fs');
-const botver = "Beta 0.65";
+const botver = "Beta 0.67";
 client.commands = new Discord.Collection();
 const commandFiles = fs.readdirSync('./commands/').filter(file => file.endsWith('.js'));
 require('dotenv').config()
@@ -13,7 +13,7 @@ for(const file of commandFiles) {
 
 client.once('ready', () => {
     console.log('Bot is online!');
-    client.user.setActivity(`${prefix}help | moved to js version.`);
+    client.user.setActivity(`${defprefix}help | moved to js version.`);
 });
 
 function logCommand(message, command) {
@@ -32,12 +32,14 @@ function logCommand(message, command) {
 }
 
 client.on('message', message => {
+    var prefix = defprefix;
     if(message.content.toLowerCase().includes("uwu") && !message.author.bot) message.channel.send("uwu");
     if(message.content.toLowerCase().includes("owo") && !message.author.bot) message.channel.send("owo");
     
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
+
 
     if(command === 'help' || command === '?') {
         client.commands.get('help').execute(message, args, Discord, prefix, botver);
@@ -60,11 +62,15 @@ client.on('message', message => {
         client.commands.get('8ball').execute(message, args, Discord);
         logCommand(message, "8ball");
     }
+
     if(command === 'kick') {
         client.commands.get('kick').execute(message, args, Discord, client);
     }
     if(command === 'ban') {
         client.commands.get('ban').execute(message, args, Discord, client);
+    }
+    if(command === 'prefix') {
+        client.commands.get('prefix').execute(client, message, args, Discord, prefix, fs);
     }
 });
 

@@ -20,15 +20,14 @@ module.exports = {
                         if (args instanceof Array && args.length) {reason = args.join(" ")}
                         else {reason = "undefined"}
                         const dmEmbed = new Discord.MessageEmbed()
-                        .setTitle(`You have been kicked from **__${message.guild.name}__**`)
-                        .setDescription(`**Reason:** \`${reason}\``)
-                        .setColor(randomColor)
+                            .setTitle(`You have been kicked from **__${message.guild.name}__**`)
+                            .setDescription(`**Reason:** \`${reason}\``)
+                            .setColor(randomColor)
                         memberTarget.send(dmEmbed)
                     } catch (err) {
                         const newEmbed = new Discord.MessageEmbed()
                             .setColor("#ff0000")
-                            .setTitle(`:x: There's an error while kicking __**${member.tag}**__.`)
-                            .setDescription("`Tip: I can't kick members that have higher permission than me`");
+                            .setTitle(`:x: There's an error while kicking __**${member.tag}**__.`);
                         message.channel.send(newEmbed).then(msg =>{
                             msg.delete({timeout:3000})
                         });
@@ -45,7 +44,8 @@ module.exports = {
             } else {
                 const newEmbed = new Discord.MessageEmbed()
                     .setColor("#ff0000")
-                    .setTitle(":x: You don't have permission to kick members.");
+                    .setTitle(":x: You don't have permission to kick members.")
+                    .setDescription("Required permission: `Kick Members`");
                 message.channel.send(newEmbed).then(msg =>{
                     msg.delete({timeout:3000})
                 });
