@@ -106,3 +106,4 @@ dist
 # Aditional ignores
 .vscode/
 start-bot.cmd
+rens-bot/
