@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const fs = require("fs");
-const mongoose = require("mongoose");
 require("dotenv").config();
 const client = new Discord.Client();
 const defprefix = process.env.DEFPREFIX;
