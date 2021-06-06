@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 require("dotenv").config();
 const client = new Discord.Client();
 const defprefix = process.env.DEFPREFIX;
-const botver = "Beta 0.67";
+const botver = "Beta 0.7";
 client.commands = new Discord.Collection();
 const commandFiles = fs
     .readdirSync("./commands/")
