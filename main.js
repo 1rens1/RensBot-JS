@@ -3,7 +3,7 @@ const fs = require("fs");
 require("dotenv").config();
 const client = new Discord.Client();
 const defprefix = process.env.DEFPREFIX;
-const botver = "Beta 0.7";
+const botver = "Beta 0.71";
 client.commands = new Discord.Collection();
 const commandFiles = fs
     .readdirSync("./commands/")
@@ -71,6 +71,7 @@ client.on("message", (message) => {
             .get("help")
             .execute(message, args, Discord, prefix, botver);
         logCommand(message, "help");
+        if (message.channel.type !== "dm") message.react("📩");
     }
     if (command === "botinfo" || command === "bi") {
         client.commands
@@ -93,10 +94,10 @@ client.on("message", (message) => {
     }
 
     if (command === "kick") {
-        client.commands.get("kick").execute(message, args, Discord, client);
+        client.commands.get("kick").execute(message, args, Discord, prefix);
     }
     if (command === "ban") {
-        client.commands.get("ban").execute(message, args, Discord, client);
+        client.commands.get("ban").execute(message, args, Discord, prefix);
     }
     if (command === "setprefix" || command === "prefix") {
         client.commands
@@ -104,25 +105,7 @@ client.on("message", (message) => {
             .execute(client, message, args, Discord, prefix);
         logCommand(message, "setprefix");
     }
-    if (command === "testdmreact") {
-        if (!message.channel.type == "dm") {
-            message.react("📩");
-            message.author.send("lol");
-        } else {
-            message.channel.send("lol1");
-        }
-    }
 });
-
-// mongoose.connect(process.env.MONGODB_SERV, {
-//     useNewUrlParser:true,
-//     useUnifiedTopology:true,
-//     userFindAndModify:false
-// }).then(() => {
-//     console.log("Connected to database.\n");
-// }).catch((err) => {
-//     console.log(err);
-// });
 client.login(process.env.TOKEN);
 
 // CLIENT ID        h6erMnZbmI3xB5sRWnyVUvMUmO6LCO3O

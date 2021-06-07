@@ -64,11 +64,6 @@ module.exports = {
                 "‎Bot made by: rens#4472\nVersion: Beta 0.65",
                 message.author.avatarURL()
             );
-        if (!message.channel.type == "dm") {
-            message.react("📩");
-            message.author.send(embed);
-        } else {
-            message.channel.send(embed);
-        }
+        return message.author.send(embed);
     },
 };
