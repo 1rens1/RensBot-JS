@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
     console.log("Bot is online!\n\n === Logs ===");
-    client.user.setActivity(`${defprefix}help | moved to js version.`);
+    client.user.setActivity(`${defprefix}help | soup is just liquid meat.`);
 });
 
 function logCommand(message, command) {
