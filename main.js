@@ -15,7 +15,7 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
     console.log("Bot is online!\n\n === Logs ===");
-    client.user.setActivity(`${defprefix}help | asking someone's name is just asking them what noise should you use to get your attention.`);
+    client.user.setActivity(`${defprefix}help | asking someone's name is just asking them what noise should you use to get their attention.`);
 });
 
 function logCommand(message, command) {
