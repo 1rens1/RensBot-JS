@@ -2,3 +2,4 @@ rens-bot/
 start-bot.cmd
 .env
 .vscode/
+prefixes.json
