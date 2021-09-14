@@ -9,6 +9,7 @@ module.exports = {
 
         var params = encodeURIComponent(question);
         var uri = "https://8ball.delegator.com/magic/JSON/" + params;
+        const msg = await message.channel.send("Asking the magic 8 ball...");
         fetch(uri)
             .then((response) => response.json())
             .then((json) => {
@@ -27,7 +28,7 @@ module.exports = {
                         `Asked by ${message.author.tag}`,
                         message.author.avatarURL()
                     );
-                message.channel.send(embed);
+                msg.edit(embed);
             });
     },
 };
