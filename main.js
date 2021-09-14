@@ -56,12 +56,13 @@ client.on("message", (message) => {
         }
         prefix = prefixesJSON[message.guild.id].prefix;
     } else prefix = process.env.DEFPREFIX;
+
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
     if (message.content.toLowerCase().includes("uwu") && !message.author.bot)
         message.channel.send("uwu");
     if (message.content.toLowerCase().includes("owo") && !message.author.bot)
         message.channel.send("owo");
 
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
 
