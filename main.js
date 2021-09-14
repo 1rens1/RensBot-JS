@@ -1,9 +1,10 @@
 const Discord = require("discord.js");
 const fs = require("fs");
+const fetch = require("node-fetch");
 require("dotenv").config();
 const client = new Discord.Client();
 const defprefix = process.env.DEFPREFIX;
-const botver = "Beta 0.71";
+const botver = "Beta 0.85";
 client.commands = new Discord.Collection();
 const commandFiles = fs
     .readdirSync("./commands/")
@@ -15,7 +16,7 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
     console.log("Bot is online!\n\n === Logs ===");
-    client.user.setActivity(`${defprefix}help | asking someone's name is just asking them what noise should you use to get their attention.`);
+    client.user.setActivity(`${defprefix}help | Don't ask the chicken.`);
 });
 
 function logCommand(message, command) {
@@ -54,9 +55,7 @@ client.on("message", (message) => {
             );
         }
         prefix = prefixesJSON[message.guild.id].prefix;
-    } else {
-        prefix = process.env.DEFPREFIX;
-    }
+    } else prefix = process.env.DEFPREFIX;
     if (message.content.toLowerCase().includes("uwu") && !message.author.bot)
         message.channel.send("uwu");
     if (message.content.toLowerCase().includes("owo") && !message.author.bot)
@@ -89,16 +88,13 @@ client.on("message", (message) => {
         logCommand(message, "random");
     }
     if (command === "8ball" || command === "8b") {
-        client.commands.get("8ball").execute(message, args, Discord);
+        client.commands.get("8ball").execute(message, args, Discord, fetch);
         logCommand(message, "8ball");
     }
 
-    if (command === "kick") {
-        client.commands.get("kick").execute(message, args, Discord, prefix);
-    }
-    if (command === "ban") {
-        client.commands.get("ban").execute(message, args, Discord, prefix);
-    }
+    if (command === "kick") client.commands.get("kick").execute(message, args, Discord, prefix);
+    if (command === "ban") client.commands.get("ban").execute(message, args, Discord, prefix);
+
     if (command === "setprefix" || command === "prefix") {
         client.commands
             .get("setprefix")

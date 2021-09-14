@@ -1,6 +1,6 @@
 {
   "name": "discord-bot",
-  "version": "0.71.0",
+  "version": "0.85.0",
   "description": "Rens Discord Bot",
   "main": "main.js",
   "scripts": {
@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.5.3",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1"
   }
 }
