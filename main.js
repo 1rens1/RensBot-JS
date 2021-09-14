@@ -91,6 +91,10 @@ client.on("message", (message) => {
         client.commands.get("8ball").execute(message, args, Discord, fetch);
         logCommand(message, "8ball");
     }
+    if (command === "say") {
+        client.commands.get("say").execute(message, args);
+        logCommand(message, "say");
+    }
 
     if (command === "kick") client.commands.get("kick").execute(message, args, Discord, prefix);
     if (command === "ban") client.commands.get("ban").execute(message, args, Discord, prefix);

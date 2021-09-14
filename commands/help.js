@@ -35,6 +35,11 @@ module.exports = {
                     name: `${prefix}8ball / ${prefix}8b`,
                     value: "Got a question?\nAsk the magic 8 ball!",
                     inline: true,
+                },
+                {
+                    name: `${prefix}say`,
+                    value: "Make me say whatever you want",
+                    inline: true,
                 }
             )
             .addField(":tools: **Moderation**", "Moderation tools.")
