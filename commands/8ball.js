@@ -27,7 +27,7 @@ module.exports = {
                         `Asked by ${message.author.tag}`,
                         message.author.avatarURL()
                     );
-                message.channel.send("Asking the magic 8 ball...").then((msg) => msg.edit(embed));
+                message.channel.send(embed);
             });
     },
 };
