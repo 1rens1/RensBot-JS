@@ -5,12 +5,12 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setTitle("Rens Bot Info")
             .setColor("#3236a8")
-            .setImage("https://i.ibb.co/JcTDL86/rens-bot-banner-long.jpg")
+            .setImage("https://i.imgur.com/fkPYA5R.png")
             .addFields(
                 { name: "`Prefix`", value: `${prefix}`, inline: true },
                 {
                     name: "`Creator`",
-                    value: "[rens#4472](https://discord.com/users/758518009093685359)",
+                    value: "[rens#0001](https://discord.com/users/758518009093685359)",
                     inline: true,
                 },
                 { name: "`Version`", value: `${botver}`, inline: true },

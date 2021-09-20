@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 require("dotenv").config();
 const client = new Discord.Client();
 const defprefix = process.env.DEFPREFIX;
-const botver = "Beta 0.85";
+const botver = "Release 1.2";
 client.commands = new Discord.Collection();
 const commandFiles = fs
     .readdirSync("./commands/")
@@ -16,7 +16,7 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
     console.log("Bot is online!\n\n === Logs ===");
-    client.user.setActivity(`${defprefix}help | Don't ask the chicken.`);
+    client.user.setActivity(`${defprefix}help | Release 1.2 🥳`);
 });
 
 function logCommand(message, command) {

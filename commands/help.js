@@ -5,9 +5,9 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
             .setTitle("List of Commands.")
             .setColor("#3236a8")
-            .setAuthor("Rens Help")
-            .setThumbnail("https://i.ibb.co/nD793MT/rens-logo.jpg")
-            .setDescription("The following commands are just for Rens bot.")
+            .setAuthor("Xeras Help")
+            .setThumbnail("https://i.imgur.com/N4uvppN.png")
+            .setDescription("The following commands are just for Xeras bot.")
             .addField(
                 ":information_source: **Information**",
                 "Commands and bot info."
@@ -66,7 +66,7 @@ module.exports = {
                 }
             )
             .setFooter(
-                "‎Bot made by: rens#4472\nVersion: Beta 0.65",
+                "‎Bot made by: rens#0001\nVersion: Beta 0.65",
                 message.author.avatarURL()
             );
         return message.author.send(embed);
