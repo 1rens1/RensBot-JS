@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args, Discord, prefix, botver) {
         const embed = new Discord.MessageEmbed()
             .setTitle("Rens Bot Info")
-            .setColor("#3236a8")
+            .setColor("#f56f42")
             .setImage("https://i.imgur.com/fkPYA5R.png")
             .addFields(
                 { name: "`Prefix`", value: `${prefix}`, inline: true },

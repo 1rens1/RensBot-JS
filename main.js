@@ -93,7 +93,7 @@ client.on("message", (message) => {
         logCommand(message, "8ball");
     }
     if (command === "say") {
-        client.commands.get("say").execute(message, args);
+        client.commands.get("say").execute(message, args, Discord);
         logCommand(message, "say");
     }
 

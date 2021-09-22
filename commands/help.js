@@ -4,7 +4,7 @@ module.exports = {
     execute(message, args, Discord, prefix) {
         const embed = new Discord.MessageEmbed()
             .setTitle("List of Commands.")
-            .setColor("#3236a8")
+            .setColor("#f56f42")
             .setAuthor("Xeras Help")
             .setThumbnail("https://i.imgur.com/N4uvppN.png")
             .setDescription("The following commands are just for Xeras bot.")
