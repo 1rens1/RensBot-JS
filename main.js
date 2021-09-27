@@ -96,6 +96,10 @@ client.on("message", (message) => {
         client.commands.get("say").execute(message, args, Discord);
         logCommand(message, "say");
     }
+    if (command === "sayan") {
+        client.commands.get("sayan").execute(message, args);
+        logCommand(message, "sayan");
+    }
 
     if (command === "kick")
         client.commands.get("kick").execute(message, args, Discord, prefix);
