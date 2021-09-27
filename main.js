@@ -58,9 +58,9 @@ client.on("message", (message) => {
     } else prefix = process.env.DEFPREFIX;
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
-    if (message.content.toLowerCase().includes("uwu") && !message.author.bot)
+    if (message.content.toLowerCase().includes("uwu"))
         message.channel.send("uwu");
-    if (message.content.toLowerCase().includes("owo") && !message.author.bot)
+    if (message.content.toLowerCase().includes("owo"))
         message.channel.send("owo");
 
     const args = message.content.slice(prefix.length).split(/ +/);
