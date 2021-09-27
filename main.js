@@ -97,8 +97,10 @@ client.on("message", (message) => {
         logCommand(message, "say");
     }
 
-    if (command === "kick") client.commands.get("kick").execute(message, args, Discord, prefix);
-    if (command === "ban") client.commands.get("ban").execute(message, args, Discord, prefix);
+    if (command === "kick")
+        client.commands.get("kick").execute(message, args, Discord, prefix);
+    if (command === "ban")
+        client.commands.get("ban").execute(message, args, Discord, prefix);
 
     if (command === "setprefix" || command === "prefix") {
         client.commands
