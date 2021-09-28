@@ -65,7 +65,9 @@ client.on("message", (message) => {
     if (
         message.content === "<@788673199956688906>" ||
         message.content === "<@!788673199956688906>" ||
-        (message.content.toLowerCase().includes("xeras") &&
+        ((message.content.toLowerCase().includes("xeras") ||
+            message.content === "<@788673199956688906>" ||
+            message.content === "<@!788673199956688906>") &&
             message.content.toLowerCase().includes("prefix"))
     ) {
         message.channel.send(`My prefix here is \`${prefix}\``);
