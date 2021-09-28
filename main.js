@@ -16,7 +16,7 @@ for (const file of commandFiles) {
 
 client.once("ready", () => {
     console.log("Bot is online!\n\n === Logs ===");
-    client.user.setActivity(`${defprefix}help | Release 1.2 🥳`);
+    client.user.setActivity(`${defprefix}help | Release 1.3`);
 });
 
 function logCommand(message, command) {
@@ -57,11 +57,20 @@ client.on("message", (message) => {
         prefix = prefixesJSON[message.guild.id].prefix;
     } else prefix = process.env.DEFPREFIX;
 
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (message.author.bot) return;
     if (message.content.toLowerCase().includes("uwu"))
         message.channel.send("uwu");
     if (message.content.toLowerCase().includes("owo"))
         message.channel.send("owo");
+    if (
+        message.mentions.has(client.user.id) ||
+        (message.content.toLowerCase().includes("xeras") &&
+            message.content.toLowerCase().includes("prefix"))
+    ) {
+        message.channel.send(`My prefix here is \`${prefix}\``);
+    }
+
+    if (!message.content.startsWith(prefix)) return;
 
     const args = message.content.slice(prefix.length).split(/ +/);
     const command = args.shift().toLowerCase();
@@ -85,7 +94,7 @@ client.on("message", (message) => {
         logCommand(message, "ping");
     }
     if (command === "random" || command === "r") {
-        client.commands.get("random").execute(message, args, Discord);
+        client.commands.get("random").execute(message, args, Discord, prefix);
         logCommand(message, "random");
     }
     if (command === "8ball" || command === "8b") {

@@ -28,7 +28,7 @@ module.exports = {
             .addFields(
                 {
                     name: `${prefix}random / ${prefix}r`,
-                    value: "Sends a random number",
+                    value: `Sends a random number`,
                     inline: true,
                 },
                 {
