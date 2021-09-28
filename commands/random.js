@@ -1,6 +1,6 @@
 module.exports = {
     name: "random",
-    description: "Sends a random number from 0-10.",
+    description: "Sends a random number.",
     execute(message, args, Discord, prefix) {
         const arg1 = args[0];
         const arg2 = args[1];

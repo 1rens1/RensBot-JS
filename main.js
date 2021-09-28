@@ -63,7 +63,7 @@ client.on("message", (message) => {
     if (message.content.toLowerCase().includes("owo"))
         message.channel.send("owo");
     if (
-        message.mentions.has(client.user.id) ||
+        message.content === "<@788673199956688906>" ||
         (message.content.toLowerCase().includes("xeras") &&
             message.content.toLowerCase().includes("prefix"))
     ) {
