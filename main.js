@@ -64,6 +64,7 @@ client.on("message", (message) => {
         message.channel.send("owo");
     if (
         message.content === "<@788673199956688906>" ||
+        message.content === "<@!788673199956688906>" ||
         (message.content.toLowerCase().includes("xeras") &&
             message.content.toLowerCase().includes("prefix"))
     ) {
